@@ -39,7 +39,12 @@ class SiteController extends Controller
     }
 
     /**
-     * {@inheritdoc}
+     * @SWG\Swagger(
+     *     basePath="/",
+     *     produces={"application/json"},
+     *     consumes={"application/x-www-form-urlencoded"},
+     *     @SWG\Info(version="1.0", title="Simple API"),
+     * )
      */
     public function actions()
     {
@@ -50,6 +55,19 @@ class SiteController extends Controller
             'captcha' => [
                 'class' => 'yii\captcha\CaptchaAction',
                 'fixedVerifyCode' => YII_ENV_TEST ? 'testme' : null,
+            ],
+
+            'docs' => [
+                'class' => 'yii2mod\swagger\SwaggerUIRenderer',
+                'restUrl' => \yii\helpers\Url::to(['site/json-schema']),
+            ],
+            'json-schema' => [
+                'class' => 'yii2mod\swagger\OpenAPIRenderer',
+                // Тhe list of directories that contains the swagger annotations.
+                'scanDir' => [
+                    Yii::getAlias('@app/controllers'),
+                    Yii::getAlias('@app/models'),
+                ],
             ],
         ];
     }
