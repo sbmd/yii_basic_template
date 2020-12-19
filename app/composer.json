@@ -41,7 +41,7 @@
     },
     "scripts": {
         "phpcs":[
-            "vendor/bin/phpcs --standard=PSR12 models/ controllers/ commands/ config/"
+            "vendor/bin/phpcs --standard=PSR12 models/ controllers/ commands/ config/ "
         ],
         "phpcs-fix":[
             "vendor/bin/phpcbf --standard=PSR12 models/ controllers/ commands/ config/"
