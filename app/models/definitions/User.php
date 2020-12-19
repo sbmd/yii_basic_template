@@ -1,5 +1,6 @@
 <?php
 
+namespace app\models\definitions;
 
 /**
  * @SWG\Definition(required={"username", "email"})
