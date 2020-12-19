@@ -13,7 +13,7 @@ class UserController extends Controller
     /**
      * @SWG\Get(path="/user",
      *     tags={"User"},
-     *     summary="sbmd3Retrieves the collection of User resources.",
+     *     summary="Retrieves the collection of User resources.",
      *     @SWG\Response(
      *         response = 200,
      *         description = "User collection response",

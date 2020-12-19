@@ -13,6 +13,7 @@ services:
       - ./app:/app
     depends_on:
       - sbmd_yii2_platform_php
+      - sbmd_yii2_platform_mysql
     ports:
       - 80:80
 
@@ -25,3 +26,15 @@ services:
     working_dir: /app
     volumes:
       - ./app/:/app
+
+  sbmd_yii2_platform_mysql:
+    image: mysql:5.7
+    container_name: sbmd_yii2_platform_mysql
+    volumes:
+      - ./developer/mysql/dumps:/dumps
+    ports:
+      - "33067:3306"
+    environment:
+      MYSQL_USER: root
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: main

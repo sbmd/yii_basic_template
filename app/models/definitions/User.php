@@ -4,11 +4,12 @@
 /**
  * @SWG\Definition(required={"username", "email"})
  *
- * @SWG\Property(property="id", type="integer")
- * @SWG\Property(property="email", type="string")
- * @SWG\Property(property="username", type="string")
+ * @SWG\Property(property="id", type="integer", default=0)
+ * @SWG\Property(property="email", type="string", default="sbmd@ukr.net")
+ * @SWG\Property(property="username", type="string", default="sbmd")
  */
 class User
 {
+
 
 }
